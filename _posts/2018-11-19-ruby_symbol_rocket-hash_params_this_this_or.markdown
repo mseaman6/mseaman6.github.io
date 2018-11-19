@@ -110,14 +110,17 @@ Within our method body, we can reference the keyword argument as though it is a 
 Implementing keyword arguments creates cleaner, clearer and more maintainable code by simplifying future refactors, explicitly stating what arguments should be passed in and outputting more meaningful argument errors.  All in all, it tends to make the code more robust and explicit.  Usually, the code clarity and maintainability gained from keyword arguments outweighs the brevity offered by positional arguments.
 
 
-> class Person
->   attr_accessor :name, :age
->  
->   def initialize(name:, age:)
->     @name = name
->     @age = age
->   end
-> end
+```
+class Person
+  attr_accessor :name, :age
+
+  def initialize(name:, age:)
+    @name = name
+		@age = age
+  end
+end
+```
+
 
 Keyword arguments also enable us to use mass assignment to instantiate new objects. If a method is defined to accept keyword arguments, we can create the hash that the method is expecting to accept as an argument, set that hash equal to a variable, and simply pass that variable in to the method as an argument.  This is often accomplished by utilizing a params hash that is created from a form (such as in Sinatra, Rails, etc.).
 
