@@ -1,7 +1,7 @@
 ---
 layout: post
-title:      "Ruby: Symbol, Rocket-Hash, params...  (:this, this:, or =>)??#"
-date:       2018-11-19 20:10:35 +0000
+title:      "Ruby: Symbol, Rocket-Hash, params...  (:this, this:, or =>)??"
+date:       2018-11-19 15:10:36 -0500
 permalink:  ruby_symbol_rocket-hash_params_this_this_or
 ---
 
@@ -15,11 +15,17 @@ The problem was I did not know what I was trying to create, and I was conflating
 
 2 important things about symbols.  They are 1) unique and 2) constant throughout your program.  A symbol is the most basic Ruby object that you can create.  It is just the name of the symbol, and an internal identifier.  The internal idenfier, is a unique object_id so it is not necessary to pre-declare or assign it a value (unlike a variable).  In terms of format, a symbol looks like this:
 
+```
 :name
+```
 -or-
+```
 :symbol
+```
 -or-
+```
 :thing
+```
 
 It's just a variable, prefixed with a colon.
 
@@ -44,15 +50,19 @@ dog = {name: 'Kenobi', breed: 'Shiba Inu', owner: 'Monica'}
 This is the shortened version, that creates symbol keys, and yields the exact same output.  However, this format will **only** work when you are trying to create a hash where the keys are symbols.  
 
 If the key is a number, or a string, the hash rocket formatting is required.
+```
 { 1 => "uno", 2 => "dos", 3 => "tres" }
+```
+```
 { "name" => "Kenobi", "breed" => "Shiba Inu", "owners" => ["Monica", "Jacob"] }
+```
 
 To look up the values within a hash you would provide the name of the hash, and then put the key (in this case a symbol) in brackets.
 
 ```
 dog[:name]
 ```
-(if the key is not a symbol it would be something like this - dog["name"] 
+(if the key is not a symbol it would be something like this - `dog["name"] `
 
 In a similar fashion you can assign additional values to a hash, or re-assign values.
 ```
@@ -122,7 +132,7 @@ params = {
 
 If you run into this issue, it's best to go through the above concepts and determine what you are working with, and then answer the below questions.
 
-1. Does the function contain keyword arguments? (what kind of data does the function expect)
+1. What kind of data does the function expect (does the function contain keyword arguments?)
 2. What are the parameters being passed to the function?  (what is the source and what format is the data already in? is it a hash? are the keys symbols?)
 3. Do the function arguments (what the function wants) and parameters (the data passed to the function) align?
 
